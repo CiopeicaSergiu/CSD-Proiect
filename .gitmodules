@@ -1,0 +1,7 @@
+
+[submodule "dependencies/restbed"]
+	path = dependencies/restbed
+	url = https://github.com/Corvusoft/restbed.git
+[submodule "dependencies/yaml"]
+	path = dependencies/yaml
+	url = https://github.com/jbeder/yaml-cpp.git
