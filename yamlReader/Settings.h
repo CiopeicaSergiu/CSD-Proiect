@@ -9,4 +9,6 @@ private:
 
 public:
   explicit Settings(const std::string filePath);
+  std::string &getServerIp();
+  std::vector<std::string> &getNodesIp();
 };

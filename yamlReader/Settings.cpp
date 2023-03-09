@@ -22,3 +22,5 @@ void Settings::loadYamlFile(const std::string &filePath) {
 }
 
 Settings::Settings(const std::string filePath) { loadYamlFile(filePath); }
+std::string &Settings::getServerIp() { return serverIp; }
+std::vector<std::string> &Settings::getNodesIp() { return nodesIp; }

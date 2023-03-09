@@ -55,19 +55,40 @@ CMAKE_BINARY_DIR = /home/sergiu/Desktop/CSD/Proiect/builddir
 # The main recursive "all" target.
 all: CMakeFiles/SHARE_ENCRYPTED.dir/all
 all: yamlReader/all
+all: C++Server/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: yamlReader/preinstall
+preinstall: C++Server/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/SHARE_ENCRYPTED.dir/clean
 clean: yamlReader/clean
+clean: C++Server/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory C++Server
+
+# Recursive "all" directory target.
+C++Server/all: C++Server/CMakeFiles/server.dir/all
+
+.PHONY : C++Server/all
+
+# Recursive "preinstall" directory target.
+C++Server/preinstall:
+
+.PHONY : C++Server/preinstall
+
+# Recursive "clean" directory target.
+C++Server/clean: C++Server/CMakeFiles/server.dir/clean
+
+.PHONY : C++Server/clean
 
 #=============================================================================
 # Directory level rules for directory yamlReader
@@ -92,6 +113,7 @@ yamlReader/clean: yamlReader/CMakeFiles/yamlReader.dir/clean
 
 # All Build rule for target.
 CMakeFiles/SHARE_ENCRYPTED.dir/all: yamlReader/CMakeFiles/yamlReader.dir/all
+CMakeFiles/SHARE_ENCRYPTED.dir/all: C++Server/CMakeFiles/server.dir/all
 	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/depend
 	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=1,2 "Built target SHARE_ENCRYPTED"
@@ -99,7 +121,7 @@ CMakeFiles/SHARE_ENCRYPTED.dir/all: yamlReader/CMakeFiles/yamlReader.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SHARE_ENCRYPTED.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SHARE_ENCRYPTED.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 0
 .PHONY : CMakeFiles/SHARE_ENCRYPTED.dir/rule
@@ -121,7 +143,7 @@ CMakeFiles/SHARE_ENCRYPTED.dir/clean:
 yamlReader/CMakeFiles/yamlReader.dir/all:
 	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/depend
 	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=3,4 "Built target yamlReader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=6,7 "Built target yamlReader"
 .PHONY : yamlReader/CMakeFiles/yamlReader.dir/all
 
 # Build rule for subdir invocation for target.
@@ -140,6 +162,33 @@ yamlReader: yamlReader/CMakeFiles/yamlReader.dir/rule
 yamlReader/CMakeFiles/yamlReader.dir/clean:
 	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/clean
 .PHONY : yamlReader/CMakeFiles/yamlReader.dir/clean
+
+#=============================================================================
+# Target rules for target C++Server/CMakeFiles/server.dir
+
+# All Build rule for target.
+C++Server/CMakeFiles/server.dir/all:
+	$(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/depend
+	$(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=3,4,5 "Built target server"
+.PHONY : C++Server/CMakeFiles/server.dir/all
+
+# Build rule for subdir invocation for target.
+C++Server/CMakeFiles/server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 C++Server/CMakeFiles/server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 0
+.PHONY : C++Server/CMakeFiles/server.dir/rule
+
+# Convenience name for target.
+server: C++Server/CMakeFiles/server.dir/rule
+
+.PHONY : server
+
+# clean rule for target.
+C++Server/CMakeFiles/server.dir/clean:
+	$(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/clean
+.PHONY : C++Server/CMakeFiles/server.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

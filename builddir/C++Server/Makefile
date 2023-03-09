@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles /home/sergiu/Desktop/CSD/Proiect/builddir/C++Server/CMakeFiles/progress.marks
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 C++Server/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 C++Server/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,84 +97,87 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 C++Server/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 C++Server/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named SHARE_ENCRYPTED
+# Convenience name for target.
+C++Server/CMakeFiles/server.dir/rule:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 C++Server/CMakeFiles/server.dir/rule
+.PHONY : C++Server/CMakeFiles/server.dir/rule
 
-# Build rule for target.
-SHARE_ENCRYPTED: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 SHARE_ENCRYPTED
-.PHONY : SHARE_ENCRYPTED
+# Convenience name for target.
+server: C++Server/CMakeFiles/server.dir/rule
 
-# fast build rule for target.
-SHARE_ENCRYPTED/fast:
-	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/build
-.PHONY : SHARE_ENCRYPTED/fast
-
-#=============================================================================
-# Target rules for targets named yamlReader
-
-# Build rule for target.
-yamlReader: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 yamlReader
-.PHONY : yamlReader
-
-# fast build rule for target.
-yamlReader/fast:
-	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/build
-.PHONY : yamlReader/fast
-
-#=============================================================================
-# Target rules for targets named server
-
-# Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 server
 .PHONY : server
 
 # fast build rule for target.
 server/fast:
-	$(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/build
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
-test.o: test.cpp.o
+Server.o: Server.cpp.o
 
-.PHONY : test.o
+.PHONY : Server.o
 
 # target to build an object file
-test.cpp.o:
-	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.o
-.PHONY : test.cpp.o
+Server.cpp.o:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/Server.cpp.o
+.PHONY : Server.cpp.o
 
-test.i: test.cpp.i
+Server.i: Server.cpp.i
 
-.PHONY : test.i
+.PHONY : Server.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.i
-.PHONY : test.cpp.i
+Server.cpp.i:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/Server.cpp.i
+.PHONY : Server.cpp.i
 
-test.s: test.cpp.s
+Server.s: Server.cpp.s
 
-.PHONY : test.s
+.PHONY : Server.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.s
-.PHONY : test.cpp.s
+Server.cpp.s:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/Server.cpp.s
+.PHONY : Server.cpp.s
+
+Service.o: Service.cpp.o
+
+.PHONY : Service.o
+
+# target to build an object file
+Service.cpp.o:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/Service.cpp.o
+.PHONY : Service.cpp.o
+
+Service.i: Service.cpp.i
+
+.PHONY : Service.i
+
+# target to preprocess a source file
+Service.cpp.i:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/Service.cpp.i
+.PHONY : Service.cpp.i
+
+Service.s: Service.cpp.s
+
+.PHONY : Service.s
+
+# target to generate assembly for a file
+Service.cpp.s:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/Service.cpp.s
+.PHONY : Service.cpp.s
 
 # Help Target
 help:
@@ -184,12 +187,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... SHARE_ENCRYPTED"
-	@echo "... yamlReader"
 	@echo "... server"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... Server.o"
+	@echo "... Server.i"
+	@echo "... Server.s"
+	@echo "... Service.o"
+	@echo "... Service.i"
+	@echo "... Service.s"
 .PHONY : help
 
 
@@ -201,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

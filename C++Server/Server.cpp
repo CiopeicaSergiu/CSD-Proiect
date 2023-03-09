@@ -1,22 +1,35 @@
 #include "Server.h"
-#include <memory>
-#include <restbed>
 
-std::string getData();
+void Server::sendResponseAndCloseSession(
+    const std::shared_ptr<restbed::Session> &session,
+    const std::string message) {
 
-void Server::setEndPointForGetData(
-    const std::make_shared<restbed::Resource> &resource,
-    const std::string path) {
-  resource->set_method_handler("GET", get_method_handler);
+  session->close(restbed::OK, message,
+                 {{"Content-Length", std::to_string(message.size()).c_str()}});
 }
 
-void Server::setEndPointForReceiveData(const std::string path) {}
-
-void Server::configureEndPoints() {
-  auto resource = std::make_shared<restbed::Resource>();
-  setEndPointForGetData();
-  setEndPointForReceiveData();
+void Server::sendUnfoundAndCloseSession(
+    const std::shared_ptr<restbed::Session> &session,
+    const std::string message) {
+  session->close(restbed::UNAUTHORIZED,
+                 {{"Content-Length", std::to_string(message.size()).c_str()}});
 }
 
-Server::Server(const size_t port);
-void Server::start();
+void Server::setSettings() {
+  settings = std::make_shared<restbed::Settings>();
+  settings->set_port(port);
+  settings->set_default_header("Connection", "close");
+}
+
+Server::Server(const size_t port) { this->port = port; }
+
+void Server::start() {
+  resource = std::make_shared<restbed::Resource>();
+
+  configureEndpoints();
+  setSettings();
+
+  restbed::Service service;
+  service.publish(resource);
+  service.start(settings);
+}

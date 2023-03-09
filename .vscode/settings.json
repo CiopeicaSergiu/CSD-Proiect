@@ -48,6 +48,7 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "list": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "restbed": "cpp"
     }
 }
