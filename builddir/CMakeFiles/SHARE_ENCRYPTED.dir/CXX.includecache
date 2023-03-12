@@ -296,17 +296,9 @@ corvusoft/restbed/context_placeholder.hpp
 corvusoft/restbed/context_placeholder_base.hpp
 ../dependencies/restbed/distribution/include/corvusoft/restbed/context_placeholder_base.hpp
 
-../yamlReader/Settings.h
-string
--
-vector
--
-
 /home/sergiu/Desktop/CSD/Proiect/test.cpp
 Service.h
 /home/sergiu/Desktop/CSD/Proiect/Service.h
-Settings.h
-/home/sergiu/Desktop/CSD/Proiect/Settings.h
 Utilities.h
 /home/sergiu/Desktop/CSD/Proiect/Utilities.h
 iostream

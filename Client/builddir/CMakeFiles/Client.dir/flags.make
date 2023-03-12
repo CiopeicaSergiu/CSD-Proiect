@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sergiu/Desktop/CSD/Proiect/Client/utilities 
+CXX_INCLUDES = -I/home/sergiu/Desktop/CSD/Proiect/Client/utilities -I/home/sergiu/Desktop/CSD/Proiect/Client/yamlReader -I/home/sergiu/Desktop/CSD/Proiect/Client/yamlReader/../dependencies/yaml/include 
 

@@ -3,4 +3,5 @@
 
 CMakeFiles/Client.dir/main.cpp.o
  ../utilities/Utilities.h
+ ../yamlReader/Settings.h
  /home/sergiu/Desktop/CSD/Proiect/Client/main.cpp

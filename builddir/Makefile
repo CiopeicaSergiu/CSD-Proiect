@@ -124,19 +124,6 @@ SHARE_ENCRYPTED/fast:
 .PHONY : SHARE_ENCRYPTED/fast
 
 #=============================================================================
-# Target rules for targets named yamlReader
-
-# Build rule for target.
-yamlReader: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 yamlReader
-.PHONY : yamlReader
-
-# fast build rule for target.
-yamlReader/fast:
-	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/build
-.PHONY : yamlReader/fast
-
-#=============================================================================
 # Target rules for targets named server
 
 # Build rule for target.
@@ -185,7 +172,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... SHARE_ENCRYPTED"
-	@echo "... yamlReader"
 	@echo "... server"
 	@echo "... test.o"
 	@echo "... test.i"

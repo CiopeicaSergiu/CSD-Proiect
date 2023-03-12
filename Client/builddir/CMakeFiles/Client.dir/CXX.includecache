@@ -10,6 +10,12 @@
 string
 -
 
+../yamlReader/Settings.h
+string
+-
+vector
+-
+
 /home/sergiu/Desktop/CSD/Proiect/Client/main.cpp
 iostream
 -
@@ -17,6 +23,8 @@ sstream
 -
 string
 -
+Settings.h
+/home/sergiu/Desktop/CSD/Proiect/Client/Settings.h
 Utilities.h
 /home/sergiu/Desktop/CSD/Proiect/Client/Utilities.h
 curlpp/Easy.hpp

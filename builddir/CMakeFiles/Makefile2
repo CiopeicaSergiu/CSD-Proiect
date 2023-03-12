@@ -54,20 +54,17 @@ CMAKE_BINARY_DIR = /home/sergiu/Desktop/CSD/Proiect/builddir
 
 # The main recursive "all" target.
 all: CMakeFiles/SHARE_ENCRYPTED.dir/all
-all: yamlReader/all
 all: C++Server/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: yamlReader/preinstall
 preinstall: C++Server/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/SHARE_ENCRYPTED.dir/clean
-clean: yamlReader/clean
 clean: C++Server/clean
 
 .PHONY : clean
@@ -91,28 +88,9 @@ C++Server/clean: C++Server/CMakeFiles/server.dir/clean
 .PHONY : C++Server/clean
 
 #=============================================================================
-# Directory level rules for directory yamlReader
-
-# Recursive "all" directory target.
-yamlReader/all: yamlReader/CMakeFiles/yamlReader.dir/all
-
-.PHONY : yamlReader/all
-
-# Recursive "preinstall" directory target.
-yamlReader/preinstall:
-
-.PHONY : yamlReader/preinstall
-
-# Recursive "clean" directory target.
-yamlReader/clean: yamlReader/CMakeFiles/yamlReader.dir/clean
-
-.PHONY : yamlReader/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/SHARE_ENCRYPTED.dir
 
 # All Build rule for target.
-CMakeFiles/SHARE_ENCRYPTED.dir/all: yamlReader/CMakeFiles/yamlReader.dir/all
 CMakeFiles/SHARE_ENCRYPTED.dir/all: C++Server/CMakeFiles/server.dir/all
 	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/depend
 	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/build
@@ -121,7 +99,7 @@ CMakeFiles/SHARE_ENCRYPTED.dir/all: C++Server/CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SHARE_ENCRYPTED.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SHARE_ENCRYPTED.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 0
 .PHONY : CMakeFiles/SHARE_ENCRYPTED.dir/rule
@@ -135,33 +113,6 @@ SHARE_ENCRYPTED: CMakeFiles/SHARE_ENCRYPTED.dir/rule
 CMakeFiles/SHARE_ENCRYPTED.dir/clean:
 	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/clean
 .PHONY : CMakeFiles/SHARE_ENCRYPTED.dir/clean
-
-#=============================================================================
-# Target rules for target yamlReader/CMakeFiles/yamlReader.dir
-
-# All Build rule for target.
-yamlReader/CMakeFiles/yamlReader.dir/all:
-	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/depend
-	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=6,7 "Built target yamlReader"
-.PHONY : yamlReader/CMakeFiles/yamlReader.dir/all
-
-# Build rule for subdir invocation for target.
-yamlReader/CMakeFiles/yamlReader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 yamlReader/CMakeFiles/yamlReader.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 0
-.PHONY : yamlReader/CMakeFiles/yamlReader.dir/rule
-
-# Convenience name for target.
-yamlReader: yamlReader/CMakeFiles/yamlReader.dir/rule
-
-.PHONY : yamlReader
-
-# clean rule for target.
-yamlReader/CMakeFiles/yamlReader.dir/clean:
-	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/clean
-.PHONY : yamlReader/CMakeFiles/yamlReader.dir/clean
 
 #=============================================================================
 # Target rules for target C++Server/CMakeFiles/server.dir

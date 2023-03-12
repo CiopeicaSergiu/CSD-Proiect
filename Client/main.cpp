@@ -2,11 +2,14 @@
 #include <sstream>
 #include <string>
 
+#include "Settings.h"
 #include "Utilities.h"
 #include <curlpp/Easy.hpp>
 #include <curlpp/Options.hpp>
 #include <curlpp/cURLpp.hpp>
 
+static const std::string protocol{"http://"};
+static const std::string receivedDataFolder{"./receivedData/"};
 using namespace curlpp::options;
 
 std::string makeGetRequestToUrl(const std::string url) {
@@ -27,9 +30,13 @@ std::string makeGetRequestToUrl(const std::string url) {
 }
 
 int main() {
-  std::cout << "I received: \n";
-  const std::string text = makeGetRequestToUrl("http://192.168.0.105:11420");
-  std::cout << text << "\n";
-  utils::writeToFile("received.txt", text);
+  Settings settings("settings.yaml");
+  const auto &nodes = settings.getNodesIp();
+  for (const auto &node : nodes) {
+    std::cout << "I received from " << node << ":\n";
+    const std::string text = makeGetRequestToUrl(protocol + node);
+    std::cout << text << "\n";
+    utils::writeToFile(receivedDataFolder + node, text);
+  }
   return 0;
 }

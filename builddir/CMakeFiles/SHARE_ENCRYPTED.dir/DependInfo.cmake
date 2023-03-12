@@ -11,16 +11,12 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../dependencies/restbed/distribution/include"
-  "../dependencies/yaml/include"
-  "../yamlReader"
   "../C++Server"
   "../Client/utilities"
-  "../yamlReader/../dependencies/yaml/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/sergiu/Desktop/CSD/Proiect/builddir/yamlReader/CMakeFiles/yamlReader.dir/DependInfo.cmake"
   "/home/sergiu/Desktop/CSD/Proiect/builddir/C++Server/CMakeFiles/server.dir/DependInfo.cmake"
   )
 

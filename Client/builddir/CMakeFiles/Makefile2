@@ -55,17 +55,20 @@ CMAKE_BINARY_DIR = /home/sergiu/Desktop/CSD/Proiect/Client/builddir
 # The main recursive "all" target.
 all: CMakeFiles/Client.dir/all
 all: utilities/all
+all: yamlReader/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: utilities/preinstall
+preinstall: yamlReader/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Client.dir/clean
 clean: utilities/clean
+clean: yamlReader/clean
 
 .PHONY : clean
 
@@ -88,10 +91,29 @@ utilities/clean: utilities/CMakeFiles/utilities.dir/clean
 .PHONY : utilities/clean
 
 #=============================================================================
+# Directory level rules for directory yamlReader
+
+# Recursive "all" directory target.
+yamlReader/all: yamlReader/CMakeFiles/yamlReader.dir/all
+
+.PHONY : yamlReader/all
+
+# Recursive "preinstall" directory target.
+yamlReader/preinstall:
+
+.PHONY : yamlReader/preinstall
+
+# Recursive "clean" directory target.
+yamlReader/clean: yamlReader/CMakeFiles/yamlReader.dir/clean
+
+.PHONY : yamlReader/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/Client.dir
 
 # All Build rule for target.
 CMakeFiles/Client.dir/all: utilities/CMakeFiles/utilities.dir/all
+CMakeFiles/Client.dir/all: yamlReader/CMakeFiles/yamlReader.dir/all
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/depend
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles --progress-num=1,2 "Built target Client"
@@ -99,7 +121,7 @@ CMakeFiles/Client.dir/all: utilities/CMakeFiles/utilities.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles 0
 .PHONY : CMakeFiles/Client.dir/rule
@@ -140,6 +162,33 @@ utilities: utilities/CMakeFiles/utilities.dir/rule
 utilities/CMakeFiles/utilities.dir/clean:
 	$(MAKE) -f utilities/CMakeFiles/utilities.dir/build.make utilities/CMakeFiles/utilities.dir/clean
 .PHONY : utilities/CMakeFiles/utilities.dir/clean
+
+#=============================================================================
+# Target rules for target yamlReader/CMakeFiles/yamlReader.dir
+
+# All Build rule for target.
+yamlReader/CMakeFiles/yamlReader.dir/all:
+	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/depend
+	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles --progress-num=5,6 "Built target yamlReader"
+.PHONY : yamlReader/CMakeFiles/yamlReader.dir/all
+
+# Build rule for subdir invocation for target.
+yamlReader/CMakeFiles/yamlReader.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 yamlReader/CMakeFiles/yamlReader.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles 0
+.PHONY : yamlReader/CMakeFiles/yamlReader.dir/rule
+
+# Convenience name for target.
+yamlReader: yamlReader/CMakeFiles/yamlReader.dir/rule
+
+.PHONY : yamlReader
+
+# clean rule for target.
+yamlReader/CMakeFiles/yamlReader.dir/clean:
+	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/clean
+.PHONY : yamlReader/CMakeFiles/yamlReader.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

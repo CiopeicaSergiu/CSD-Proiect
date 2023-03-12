@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/sergiu/Desktop/CSD/Proiect/Client/builddir
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -78,16 +67,27 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles /home/sergiu/Desktop/CSD/Proiect/Client/builddir/yamlReader/CMakeFiles/progress.marks
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(MAKE) -f CMakeFiles/Makefile2 yamlReader/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(MAKE) -f CMakeFiles/Makefile2 yamlReader/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,84 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(MAKE) -f CMakeFiles/Makefile2 yamlReader/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(MAKE) -f CMakeFiles/Makefile2 yamlReader/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Client
+# Convenience name for target.
+yamlReader/CMakeFiles/yamlReader.dir/rule:
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(MAKE) -f CMakeFiles/Makefile2 yamlReader/CMakeFiles/yamlReader.dir/rule
+.PHONY : yamlReader/CMakeFiles/yamlReader.dir/rule
 
-# Build rule for target.
-Client: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Client
-.PHONY : Client
+# Convenience name for target.
+yamlReader: yamlReader/CMakeFiles/yamlReader.dir/rule
 
-# fast build rule for target.
-Client/fast:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/build
-.PHONY : Client/fast
-
-#=============================================================================
-# Target rules for targets named utilities
-
-# Build rule for target.
-utilities: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 utilities
-.PHONY : utilities
-
-# fast build rule for target.
-utilities/fast:
-	$(MAKE) -f utilities/CMakeFiles/utilities.dir/build.make utilities/CMakeFiles/utilities.dir/build
-.PHONY : utilities/fast
-
-#=============================================================================
-# Target rules for targets named yamlReader
-
-# Build rule for target.
-yamlReader: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 yamlReader
 .PHONY : yamlReader
 
 # fast build rule for target.
 yamlReader/fast:
-	$(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/build
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/build
 .PHONY : yamlReader/fast
 
-main.o: main.cpp.o
+Settings.o: Settings.cpp.o
 
-.PHONY : main.o
+.PHONY : Settings.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/main.cpp.o
-.PHONY : main.cpp.o
+Settings.cpp.o:
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/Settings.cpp.o
+.PHONY : Settings.cpp.o
 
-main.i: main.cpp.i
+Settings.i: Settings.cpp.i
 
-.PHONY : main.i
+.PHONY : Settings.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/main.cpp.i
-.PHONY : main.cpp.i
+Settings.cpp.i:
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/Settings.cpp.i
+.PHONY : Settings.cpp.i
 
-main.s: main.cpp.s
+Settings.s: Settings.cpp.s
 
-.PHONY : main.s
+.PHONY : Settings.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/main.cpp.s
-.PHONY : main.cpp.s
+Settings.cpp.s:
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(MAKE) -f yamlReader/CMakeFiles/yamlReader.dir/build.make yamlReader/CMakeFiles/yamlReader.dir/Settings.cpp.s
+.PHONY : Settings.cpp.s
 
 # Help Target
 help:
@@ -182,14 +158,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Client"
-	@echo "... utilities"
+	@echo "... rebuild_cache"
 	@echo "... yamlReader"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Settings.o"
+	@echo "... Settings.i"
+	@echo "... Settings.s"
 .PHONY : help
 
 
@@ -201,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/sergiu/Desktop/CSD/Proiect/Client/builddir && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

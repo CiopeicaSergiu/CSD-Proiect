@@ -1,9 +1,6 @@
 /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles/rebuild_cache.dir
 /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles/edit_cache.dir
 /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles/SHARE_ENCRYPTED.dir
-/home/sergiu/Desktop/CSD/Proiect/builddir/yamlReader/CMakeFiles/edit_cache.dir
-/home/sergiu/Desktop/CSD/Proiect/builddir/yamlReader/CMakeFiles/rebuild_cache.dir
-/home/sergiu/Desktop/CSD/Proiect/builddir/yamlReader/CMakeFiles/yamlReader.dir
 /home/sergiu/Desktop/CSD/Proiect/builddir/C++Server/CMakeFiles/rebuild_cache.dir
 /home/sergiu/Desktop/CSD/Proiect/builddir/C++Server/CMakeFiles/edit_cache.dir
 /home/sergiu/Desktop/CSD/Proiect/builddir/C++Server/CMakeFiles/server.dir

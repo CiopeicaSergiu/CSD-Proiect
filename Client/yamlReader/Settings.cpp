@@ -1,6 +1,6 @@
 #include "Settings.h"
-#include </home/sergiu/Desktop/CSD/Proiect/dependencies/yaml/include/yaml-cpp/yaml.h>
 #include <iostream>
+#include <yaml-cpp/yaml.h>
 
 template <typename T> void printArray(const std::vector<T> &arr) {
   std::cout << "\nArr: ";
