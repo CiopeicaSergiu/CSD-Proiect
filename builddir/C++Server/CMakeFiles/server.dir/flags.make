@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sergiu/Desktop/CSD/Proiect/dependencies/restbed/distribution/include 
+CXX_INCLUDES = -I/home/sergiu/Desktop/CSD/Proiect/dependencies/restbed/distribution/include -I/home/sergiu/Desktop/CSD/Proiect/Client/utilities 
 

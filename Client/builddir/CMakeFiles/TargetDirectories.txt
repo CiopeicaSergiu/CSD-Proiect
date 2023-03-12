@@ -1,0 +1,6 @@
+/home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles/rebuild_cache.dir
+/home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles/edit_cache.dir
+/home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles/Client.dir
+/home/sergiu/Desktop/CSD/Proiect/Client/builddir/utilities/CMakeFiles/rebuild_cache.dir
+/home/sergiu/Desktop/CSD/Proiect/Client/builddir/utilities/CMakeFiles/edit_cache.dir
+/home/sergiu/Desktop/CSD/Proiect/Client/builddir/utilities/CMakeFiles/utilities.dir

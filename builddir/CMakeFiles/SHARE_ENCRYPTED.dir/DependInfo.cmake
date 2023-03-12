@@ -14,6 +14,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../dependencies/yaml/include"
   "../yamlReader"
   "../C++Server"
+  "../Client/utilities"
   "../yamlReader/../dependencies/yaml/include"
   )
 

@@ -1,8 +1,14 @@
 #include "Service.h"
+#include "Utilities.h"
+#include <iostream>
+#include <string>
+#include <utility>
+#include <vector>
 
 void Service::getDataEvent(const std::shared_ptr<restbed::Session> session) {
-  const std::string message{"Ana are mere"};
-  sendResponseAndCloseSession(session, message);
+  const std::string text = utils::readFromFile("./testFile.txt");
+  std::cout << text << "\n";
+  sendResponseAndCloseSession(session, text);
 }
 
 void Service::setEndPointForGetData(

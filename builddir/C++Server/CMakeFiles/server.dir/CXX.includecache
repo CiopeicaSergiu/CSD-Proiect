@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../Client/utilities/Utilities.h
+string
+-
+
 ../dependencies/restbed/distribution/include/corvusoft/restbed/byte.hpp
 vector
 -
@@ -280,10 +284,6 @@ corvusoft/restbed/context_placeholder.hpp
 corvusoft/restbed/context_placeholder_base.hpp
 ../dependencies/restbed/distribution/include/corvusoft/restbed/context_placeholder_base.hpp
 
-/home/sergiu/Desktop/CSD/Proiect/C++Server/Server.cpp
-Server.h
-/home/sergiu/Desktop/CSD/Proiect/C++Server/Server.h
-
 /home/sergiu/Desktop/CSD/Proiect/C++Server/Server.h
 memory
 -
@@ -291,4 +291,22 @@ restbed
 -
 string
 -
+
+/home/sergiu/Desktop/CSD/Proiect/C++Server/Service.cpp
+Service.h
+/home/sergiu/Desktop/CSD/Proiect/C++Server/Service.h
+Utilities.h
+/home/sergiu/Desktop/CSD/Proiect/C++Server/Utilities.h
+iostream
+-
+string
+-
+utility
+-
+vector
+-
+
+/home/sergiu/Desktop/CSD/Proiect/C++Server/Service.h
+Server.h
+/home/sergiu/Desktop/CSD/Proiect/C++Server/Server.h
 

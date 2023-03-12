@@ -10,4 +10,5 @@ private:
 
 public:
   explicit Service(const size_t port) : Server(port){};
+  void addEndpoint(const std::string endpoint);
 };

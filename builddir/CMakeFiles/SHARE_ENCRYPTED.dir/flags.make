@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sergiu/Desktop/CSD/Proiect/dependencies/restbed/distribution/include -I/home/sergiu/Desktop/CSD/Proiect/dependencies/yaml/include -I/home/sergiu/Desktop/CSD/Proiect/yamlReader -I/home/sergiu/Desktop/CSD/Proiect/C++Server -I/home/sergiu/Desktop/CSD/Proiect/yamlReader/../dependencies/yaml/include 
+CXX_INCLUDES = -I/home/sergiu/Desktop/CSD/Proiect/dependencies/restbed/distribution/include -I/home/sergiu/Desktop/CSD/Proiect/dependencies/yaml/include -I/home/sergiu/Desktop/CSD/Proiect/yamlReader -I/home/sergiu/Desktop/CSD/Proiect/C++Server -I/home/sergiu/Desktop/CSD/Proiect/Client/utilities -I/home/sergiu/Desktop/CSD/Proiect/yamlReader/../dependencies/yaml/include 
 

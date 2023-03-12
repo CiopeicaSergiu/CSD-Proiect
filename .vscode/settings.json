@@ -49,6 +49,7 @@
         "utility": "cpp",
         "list": "cpp",
         "valarray": "cpp",
-        "restbed": "cpp"
+        "restbed": "cpp",
+        "iostream": "cpp"
     }
 }

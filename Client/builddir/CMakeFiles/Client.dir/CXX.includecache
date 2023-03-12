@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../utilities/Utilities.h
+string
+-
+
+/home/sergiu/Desktop/CSD/Proiect/Client/main.cpp
+iostream
+-
+sstream
+-
+string
+-
+Utilities.h
+/home/sergiu/Desktop/CSD/Proiect/Client/Utilities.h
+curlpp/Easy.hpp
+-
+curlpp/Options.hpp
+-
+curlpp/cURLpp.hpp
+-
+

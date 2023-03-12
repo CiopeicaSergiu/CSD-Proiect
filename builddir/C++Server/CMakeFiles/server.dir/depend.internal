@@ -27,6 +27,7 @@ C++Server/CMakeFiles/server.dir/Server.cpp.o
  /home/sergiu/Desktop/CSD/Proiect/C++Server/Server.cpp
  /home/sergiu/Desktop/CSD/Proiect/C++Server/Server.h
 C++Server/CMakeFiles/server.dir/Service.cpp.o
+ ../Client/utilities/Utilities.h
  ../dependencies/restbed/distribution/include/corvusoft/restbed/byte.hpp
  ../dependencies/restbed/distribution/include/corvusoft/restbed/common.hpp
  ../dependencies/restbed/distribution/include/corvusoft/restbed/context_placeholder.hpp

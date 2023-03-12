@@ -18,6 +18,10 @@ string
 Server.h
 ../C++Server/Server.h
 
+../Client/utilities/Utilities.h
+string
+-
+
 ../dependencies/restbed/distribution/include/corvusoft/restbed/byte.hpp
 vector
 -
@@ -303,4 +307,8 @@ Service.h
 /home/sergiu/Desktop/CSD/Proiect/Service.h
 Settings.h
 /home/sergiu/Desktop/CSD/Proiect/Settings.h
+Utilities.h
+/home/sergiu/Desktop/CSD/Proiect/Utilities.h
+iostream
+-
 

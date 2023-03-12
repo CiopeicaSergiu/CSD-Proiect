@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Client.dir/main.cpp.o  -o Client   -L/home/sergiu/Desktop/CSD/Proiect/Client/builddir/utilities  -Wl,-rpath,/home/sergiu/Desktop/CSD/Proiect/Client/builddir/utilities -lcurl -lcurlpp utilities/libutilities.a 
