@@ -50,6 +50,7 @@
         "list": "cpp",
         "valarray": "cpp",
         "restbed": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "algorithm": "cpp"
     }
 }
