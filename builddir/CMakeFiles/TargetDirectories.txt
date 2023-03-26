@@ -4,3 +4,6 @@
 /home/sergiu/Desktop/CSD/Proiect/builddir/C++Server/CMakeFiles/rebuild_cache.dir
 /home/sergiu/Desktop/CSD/Proiect/builddir/C++Server/CMakeFiles/edit_cache.dir
 /home/sergiu/Desktop/CSD/Proiect/builddir/C++Server/CMakeFiles/server.dir
+/home/sergiu/Desktop/CSD/Proiect/builddir/EncryptionDecryption/CMakeFiles/rebuild_cache.dir
+/home/sergiu/Desktop/CSD/Proiect/builddir/EncryptionDecryption/CMakeFiles/edit_cache.dir
+/home/sergiu/Desktop/CSD/Proiect/builddir/EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir

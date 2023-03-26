@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles /home/sergiu/Desktop/CSD/Proiect/builddir/EncryptionDecryption/CMakeFiles/progress.marks
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 EncryptionDecryption/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 EncryptionDecryption/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,84 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 EncryptionDecryption/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 EncryptionDecryption/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named SHARE_ENCRYPTED
+# Convenience name for target.
+EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/rule:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f CMakeFiles/Makefile2 EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/rule
+.PHONY : EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/rule
 
-# Build rule for target.
-SHARE_ENCRYPTED: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 SHARE_ENCRYPTED
-.PHONY : SHARE_ENCRYPTED
+# Convenience name for target.
+EncryptionDecryption: EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/rule
 
-# fast build rule for target.
-SHARE_ENCRYPTED/fast:
-	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/build
-.PHONY : SHARE_ENCRYPTED/fast
-
-#=============================================================================
-# Target rules for targets named server
-
-# Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 server
-.PHONY : server
-
-# fast build rule for target.
-server/fast:
-	$(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/build
-.PHONY : server/fast
-
-#=============================================================================
-# Target rules for targets named EncryptionDecryption
-
-# Build rule for target.
-EncryptionDecryption: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EncryptionDecryption
 .PHONY : EncryptionDecryption
 
 # fast build rule for target.
 EncryptionDecryption/fast:
-	$(MAKE) -f EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build.make EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build.make EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build
 .PHONY : EncryptionDecryption/fast
 
-test.o: test.cpp.o
+BlowFish.o: BlowFish.cpp.o
 
-.PHONY : test.o
+.PHONY : BlowFish.o
 
 # target to build an object file
-test.cpp.o:
-	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.o
-.PHONY : test.cpp.o
+BlowFish.cpp.o:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build.make EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/BlowFish.cpp.o
+.PHONY : BlowFish.cpp.o
 
-test.i: test.cpp.i
+BlowFish.i: BlowFish.cpp.i
 
-.PHONY : test.i
+.PHONY : BlowFish.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.i
-.PHONY : test.cpp.i
+BlowFish.cpp.i:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build.make EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/BlowFish.cpp.i
+.PHONY : BlowFish.cpp.i
 
-test.s: test.cpp.s
+BlowFish.s: BlowFish.cpp.s
 
-.PHONY : test.s
+.PHONY : BlowFish.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.s
-.PHONY : test.cpp.s
+BlowFish.cpp.s:
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(MAKE) -f EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build.make EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/BlowFish.cpp.s
+.PHONY : BlowFish.cpp.s
 
 # Help Target
 help:
@@ -184,12 +160,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... SHARE_ENCRYPTED"
-	@echo "... server"
 	@echo "... EncryptionDecryption"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... BlowFish.o"
+	@echo "... BlowFish.i"
+	@echo "... BlowFish.s"
 .PHONY : help
 
 
@@ -201,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/sergiu/Desktop/CSD/Proiect/builddir && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -55,17 +55,20 @@ CMAKE_BINARY_DIR = /home/sergiu/Desktop/CSD/Proiect/builddir
 # The main recursive "all" target.
 all: CMakeFiles/SHARE_ENCRYPTED.dir/all
 all: C++Server/all
+all: EncryptionDecryption/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: C++Server/preinstall
+preinstall: EncryptionDecryption/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/SHARE_ENCRYPTED.dir/clean
 clean: C++Server/clean
+clean: EncryptionDecryption/clean
 
 .PHONY : clean
 
@@ -88,18 +91,37 @@ C++Server/clean: C++Server/CMakeFiles/server.dir/clean
 .PHONY : C++Server/clean
 
 #=============================================================================
+# Directory level rules for directory EncryptionDecryption
+
+# Recursive "all" directory target.
+EncryptionDecryption/all: EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/all
+
+.PHONY : EncryptionDecryption/all
+
+# Recursive "preinstall" directory target.
+EncryptionDecryption/preinstall:
+
+.PHONY : EncryptionDecryption/preinstall
+
+# Recursive "clean" directory target.
+EncryptionDecryption/clean: EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/clean
+
+.PHONY : EncryptionDecryption/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/SHARE_ENCRYPTED.dir
 
 # All Build rule for target.
 CMakeFiles/SHARE_ENCRYPTED.dir/all: C++Server/CMakeFiles/server.dir/all
+CMakeFiles/SHARE_ENCRYPTED.dir/all: EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/all
 	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/depend
 	$(MAKE) -f CMakeFiles/SHARE_ENCRYPTED.dir/build.make CMakeFiles/SHARE_ENCRYPTED.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=1,2 "Built target SHARE_ENCRYPTED"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=3,4 "Built target SHARE_ENCRYPTED"
 .PHONY : CMakeFiles/SHARE_ENCRYPTED.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SHARE_ENCRYPTED.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SHARE_ENCRYPTED.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 0
 .PHONY : CMakeFiles/SHARE_ENCRYPTED.dir/rule
@@ -121,7 +143,7 @@ CMakeFiles/SHARE_ENCRYPTED.dir/clean:
 C++Server/CMakeFiles/server.dir/all:
 	$(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/depend
 	$(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=3,4,5 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=5,6,7 "Built target server"
 .PHONY : C++Server/CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -140,6 +162,33 @@ server: C++Server/CMakeFiles/server.dir/rule
 C++Server/CMakeFiles/server.dir/clean:
 	$(MAKE) -f C++Server/CMakeFiles/server.dir/build.make C++Server/CMakeFiles/server.dir/clean
 .PHONY : C++Server/CMakeFiles/server.dir/clean
+
+#=============================================================================
+# Target rules for target EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir
+
+# All Build rule for target.
+EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/all:
+	$(MAKE) -f EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build.make EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/depend
+	$(MAKE) -f EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build.make EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=1,2 "Built target EncryptionDecryption"
+.PHONY : EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/all
+
+# Build rule for subdir invocation for target.
+EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles 0
+.PHONY : EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/rule
+
+# Convenience name for target.
+EncryptionDecryption: EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/rule
+
+.PHONY : EncryptionDecryption
+
+# clean rule for target.
+EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/clean:
+	$(MAKE) -f EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/build.make EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/clean
+.PHONY : EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

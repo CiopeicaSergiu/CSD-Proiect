@@ -51,6 +51,11 @@
         "valarray": "cpp",
         "restbed": "cpp",
         "iostream": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "bitset": "cpp",
+        "complex": "cpp",
+        "cstring": "cpp",
+        "typeindex": "cpp",
+        "variant": "cpp"
     }
 }

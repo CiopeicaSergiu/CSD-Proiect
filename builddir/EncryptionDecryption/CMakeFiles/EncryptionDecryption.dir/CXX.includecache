@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sergiu/Desktop/CSD/Proiect/EncryptionDecryption/BlowFish.cpp
+BlowFish.h
+/home/sergiu/Desktop/CSD/Proiect/EncryptionDecryption/BlowFish.h
+algorithm
+-
+boost/algorithm/string.hpp
+-
+fstream
+-
+iostream
+-
+iterator
+-
+string
+-
+vector
+-
+
+/home/sergiu/Desktop/CSD/Proiect/EncryptionDecryption/BlowFish.h
+string
+-
+

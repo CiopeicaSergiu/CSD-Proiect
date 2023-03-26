@@ -9,6 +9,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../C++Server/CMakeLists.txt"
   "../CMakeLists.txt"
+  "../EncryptionDecryption/CMakeLists.txt"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
@@ -43,10 +44,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "C++Server/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "EncryptionDecryption/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/SHARE_ENCRYPTED.dir/DependInfo.cmake"
   "C++Server/CMakeFiles/server.dir/DependInfo.cmake"
+  "EncryptionDecryption/CMakeFiles/EncryptionDecryption.dir/DependInfo.cmake"
   )
