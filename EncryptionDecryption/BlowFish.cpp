@@ -9,6 +9,7 @@
 
 namespace blowfish {
 static const std::uint32_t TAKE8_BITS = 0xFF;
+static constexpr std::uint64_t TWO_POW_THIRTYTWO = 4294967296;
 
 static std::vector<std::uint32_t> S1;
 static std::vector<std::uint32_t> S2;
@@ -59,12 +60,14 @@ bool initializeSubstitutionBox(const std::string path,
   return Sbox.size() != 256;
 }
 
+//
+
 std::uint32_t F(std::uint32_t data) {
 
-  const std::uint8_t Xd = split8Bits(data);
-  const std::uint8_t Xc = split8Bits(data);
-  const std::uint8_t Xb = split8Bits(data);
   const std::uint8_t Xa = split8Bits(data);
+  const std::uint8_t Xb = split8Bits(data);
+  const std::uint8_t Xc = split8Bits(data);
+  const std::uint8_t Xd = split8Bits(data);
 
   if (S1.empty() || S2.empty() || S3.empty() || S4.empty()) {
     if (initializeSubstitutionBox(Sbox1Path, S1)) {
@@ -89,7 +92,13 @@ std::uint32_t F(std::uint32_t data) {
     }
   }
 
-  return ((Xa | Xb) ^ Xc) | Xd;
+  std::uint32_t XaNew = S1[Xa];
+  std::uint32_t XbNew = S2[Xb];
+  std::uint32_t XcNew = S3[Xc];
+  std::uint32_t XdNew = S4[Xd];
+
+  return ((((XaNew + XbNew) % TWO_POW_THIRTYTWO) ^ XcNew) + XdNew) %
+         TWO_POW_THIRTYTWO;
 } // namespace blowfish
 
 std::vector<std::uint32_t> splitIn32BitChunksWchar16(std::wstring &text) {
@@ -136,52 +145,39 @@ std::vector<std::uint32_t> splitIn32BitChunks(std::wstring &text) {
 }
 
 std::wstring encryptWcharSize4(std::wstring text) {
+
   if (text.empty()) {
     return L"";
   }
 
-  const static std::vector<uint32_t> subKeys = {
-      0x2F5A, 0xD104, 0xD5FC, 0x7812, 0x91D3, 0xD793, 0xC470, 0x7E43, 0xD13C,
-      0x009F, 0x4A37, 0x3A56, 0xD277, 0x7DC9, 0x7705, 0xE069, 0x37EE, 0xE923};
+  if (text.size() % 2 == 1) {
+    text.push_back(' ');
+  }
 
-  const auto chuked32BitData = splitIn32BitChunks(text);
+  const static std::vector<uint32_t> subKeys{
+      0x6B9B8DB3, 0xE8AFD413, 0x4B9A1F4A, 0x60A48FEA, 0x2CC34519, 0xCD58D244,
+      0xC26FE723, 0xAED6C8B5, 0x86E73ECA, 0x062141E0, 0x524620B1, 0x9EE084B2,
+      0x4BECE1BD, 0x05962030, 0x445AE44E, 0xAC4B8B42, 0x5383662D, 0x56FA18EA};
 
-  std::vector<std::uint32_t> firstLayer;
-  firstLayer.reserve(chuked32BitData.size());
+  auto chuked32BitData = splitIn32BitChunks(text);
 
-  std::transform(chuked32BitData.cbegin(), chuked32BitData.cend(),
-                 subKeys.cbegin(), std::back_inserter(firstLayer),
-                 [](const auto &chunkOfData, const auto key) {
-                   return chunkOfData ^ key;
-                 });
-
-  std::vector<std::uint32_t> secondLayer;
-  secondLayer.reserve(256);
-
-  std::transform(chuked32BitData.cbegin(), chuked32BitData.cend(),
-                 subKeys.cbegin(), std::back_inserter(firstLayer),
-                 [](const auto &chunkOfData, const auto key) {
-                   return chunkOfData ^ key;
-                 });
-
-  for (auto firstLayerIt = firstLayer.begin(); firstLayerIt != firstLayer.end();
-       firstLayerIt += 2) {
-    const auto Xl = firstLayerIt;
-    const auto Xr = std::next(firstLayerIt);
+  for (auto chuked32BitDataIt = chuked32BitData.begin();
+       chuked32BitDataIt != chuked32BitData.end(); chuked32BitDataIt += 2) {
+    const auto Xl = chuked32BitDataIt;
+    const auto Xr = std::next(chuked32BitDataIt);
 
     for (std::uint32_t i = 0; i < NR_RUNDS; ++i) {
-      const auto newXlValue = F(*Xl | subKeys[i]) ^ *Xr;
-      *Xr = *Xl;
-      *Xl = newXlValue;
+      *Xl = *Xl ^ subKeys[i];
+      *Xr = F(*Xl) ^ *Xr;
+      std::swap(*Xl, *Xr);
     }
-
-    const auto newXrValue = *Xl ^ subKeys[1];
-    *Xl = *Xr ^ subKeys[0];
-    *Xr = newXrValue;
+    std::swap(*Xl, *Xr);
+    *Xr = *Xr ^ subKeys[16];
+    *Xl = *Xl ^ subKeys[17];
   }
 
   std::wstring result;
-  std::transform(firstLayer.begin(), firstLayer.end(),
+  std::transform(chuked32BitData.begin(), chuked32BitData.end(),
                  std::back_inserter(result), [](const auto ch) { return ch; });
 
   return result;
@@ -196,48 +192,34 @@ std::wstring dencrypt(std::wstring text) {
     return L"";
   }
 
+  if (text.size() % 2 == 1) {
+    text.push_back(' ');
+  }
+
   const static std::vector<uint32_t> subKeys{
-      0xE923, 0x37EE, 0xE069, 0x7705, 0x7DC9, 0xD277, 0x3A56, 0x4A37, 0x009F,
-      0xD13C, 0x7E43, 0xC470, 0xD793, 0x91D3, 0x7812, 0xD5FC, 0xD104, 0x2F5A};
+      0x56FA18EA, 0x5383662D, 0xAC4B8B42, 0x445AE44E, 0x05962030, 0x4BECE1BD,
+      0x9EE084B2, 0x524620B1, 0x062141E0, 0x86E73ECA, 0xAED6C8B5, 0xC26FE723,
+      0xCD58D244, 0x2CC34519, 0x60A48FEA, 0x4B9A1F4A, 0xE8AFD413, 0x6B9B8DB3};
 
-  const auto chuked32BitData = splitIn32BitChunks(text);
+  auto chuked32BitData = splitIn32BitChunks(text);
 
-  std::vector<std::uint32_t> firstLayer;
-  firstLayer.reserve(chuked32BitData.size());
-
-  std::transform(chuked32BitData.cbegin(), chuked32BitData.cend(),
-                 subKeys.cbegin(), std::back_inserter(firstLayer),
-                 [](const auto &chunkOfData, const auto key) {
-                   return chunkOfData ^ key;
-                 });
-
-  std::vector<std::uint32_t> secondLayer;
-  secondLayer.reserve(256);
-
-  std::transform(chuked32BitData.cbegin(), chuked32BitData.cend(),
-                 subKeys.cbegin(), std::back_inserter(firstLayer),
-                 [](const auto &chunkOfData, const auto key) {
-                   return chunkOfData ^ key;
-                 });
-
-  for (auto firstLayerIt = firstLayer.begin(); firstLayerIt != firstLayer.end();
-       firstLayerIt += 2) {
-    const auto Xl = firstLayerIt;
-    const auto Xr = std::next(firstLayerIt);
+  for (auto chuked32BitDataIt = chuked32BitData.begin();
+       chuked32BitDataIt != chuked32BitData.end(); chuked32BitDataIt += 2) {
+    const auto Xl = chuked32BitDataIt;
+    const auto Xr = std::next(chuked32BitDataIt);
 
     for (std::uint32_t i = 0; i < NR_RUNDS; ++i) {
-      const auto newXlValue = F(*Xl | subKeys[i]) ^ *Xr;
-      *Xr = *Xl;
-      *Xl = newXlValue;
+      *Xl = *Xl ^ subKeys[i];
+      *Xr = F(*Xl) ^ *Xr;
+      std::swap(*Xl, *Xr);
     }
-
-    const auto newXrValue = *Xl ^ subKeys[1];
-    *Xl = *Xr ^ subKeys[0];
-    *Xr = newXrValue;
+    std::swap(*Xl, *Xr);
+    *Xr = *Xr ^ subKeys[16];
+    *Xl = *Xl ^ subKeys[17];
   }
 
   std::wstring result;
-  std::transform(firstLayer.begin(), firstLayer.end(),
+  std::transform(chuked32BitData.begin(), chuked32BitData.end(),
                  std::back_inserter(result), [](const auto ch) { return ch; });
 
   return result;
