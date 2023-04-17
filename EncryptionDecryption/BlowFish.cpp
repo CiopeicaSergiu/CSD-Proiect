@@ -4,7 +4,9 @@
 #include <fstream>
 #include <iostream>
 #include <iterator>
+#include <mutex>
 #include <string>
+#include <utility>
 #include <vector>
 
 namespace blowfish {
@@ -21,7 +23,13 @@ static const std::string Sbox2Path{"./EncryptionDecryption/Sbox2.txt"};
 static const std::string Sbox3Path{"./EncryptionDecryption/Sbox3.txt"};
 static const std::string Sbox4Path{"./EncryptionDecryption/Sbox4.txt"};
 
+static std::once_flag areKeysInitialized;
+static std::once_flag areReverseKeysInitialized;
+
 static const std::uint32_t NR_RUNDS = 16;
+
+static std::vector<uint32_t> pKeys;
+static std::vector<uint32_t> pKeysReverse;
 
 template <typename T> void printVec(const std::vector<T> vec) {
   std::cout << "\nVec: ";
@@ -49,7 +57,7 @@ bool initializeSubstitutionBox(const std::string path,
     boost::trim(line);
     std::vector<std::string> vec;
     boost::split(vec, line, boost::is_any_of(" "), boost::token_compress_on);
-    printVec(vec);
+    // printVec(vec);
     std::transform(vec.begin(), vec.end(), std::back_inserter(Sbox),
                    [](const auto &substitutionValue) {
                      return stol("0x" + substitutionValue, nullptr, 16);
@@ -128,6 +136,10 @@ std::vector<std::uint32_t> splitIn32BitChunksWchar32(std::wstring &text) {
     return std::vector<std::uint32_t>{};
   }
 
+  if (text.size() % 2 == 1) {
+    text.push_back(' ');
+  }
+
   std::vector<std::uint32_t> chunkedData;
   chunkedData.reserve(text.size());
   std::transform(text.cbegin(), text.cend(), std::back_inserter(chunkedData),
@@ -144,20 +156,47 @@ std::vector<std::uint32_t> splitIn32BitChunks(std::wstring &text) {
                                     : std::vector<std::uint32_t>{};
 }
 
-std::wstring encryptWcharSize4(std::wstring text) {
+std::vector<std::uint32_t> splitAndPaddManualKey(std::wstring key) {
+  if (key.size() < pKeys.size()) {
+    std::cout << "Yes sir\n";
+    key.append(key.substr(0, pKeys.size() - key.size()));
+  }
+
+  return splitIn32BitChunks(key);
+}
+
+void initializePKeys(const std::wstring &manualKey) {
+  const std::vector<uint32_t> harcodedKeys{
+      0x6B9B8DB3, 0xE8AFD413, 0x4B9A1F4A, 0x60A48FEA, 0x2CC34519, 0xCD58D244,
+      0xC26FE723, 0xAED6C8B5, 0x86E73ECA, 0x062141E0, 0x524620B1, 0x9EE084B2,
+      0x4BECE1BD, 0x05962030, 0x445AE44E, 0xAC4B8B42, 0x5383662D, 0x56FA18EA};
+  std::cout << "initializePKeys1\n";
+  std::wcout << "Manual Key... " << manualKey << "\n";
+  const auto chuckedManualKeys = splitAndPaddManualKey(manualKey);
+
+  pKeys.reserve(harcodedKeys.size());
+
+  std::transform(harcodedKeys.cbegin(), harcodedKeys.cend(),
+                 chuckedManualKeys.begin(), std::back_inserter(pKeys),
+                 [](const auto hardCodedKey, const auto manualKey) {
+                   return hardCodedKey ^ manualKey;
+                 });
+
+  std::cout << "initializePKeys2\n";
+}
+
+std::wstring encryptWcharSize4(std::wstring text,
+                               const std::wstring &manualKey) {
 
   if (text.empty()) {
     return L"";
   }
 
-  if (text.size() % 2 == 1) {
-    text.push_back(' ');
-  }
+  std::cout << "encryptWcharSize4 1\n";
 
-  const static std::vector<uint32_t> subKeys{
-      0x6B9B8DB3, 0xE8AFD413, 0x4B9A1F4A, 0x60A48FEA, 0x2CC34519, 0xCD58D244,
-      0xC26FE723, 0xAED6C8B5, 0x86E73ECA, 0x062141E0, 0x524620B1, 0x9EE084B2,
-      0x4BECE1BD, 0x05962030, 0x445AE44E, 0xAC4B8B42, 0x5383662D, 0x56FA18EA};
+  // std::call_once(areKeysInitialized, initializePKeys, manualKey);
+  initializePKeys(manualKey);
+  std::cout << "encryptWcharSize4 2\n";
 
   auto chuked32BitData = splitIn32BitChunks(text);
 
@@ -167,13 +206,13 @@ std::wstring encryptWcharSize4(std::wstring text) {
     const auto Xr = std::next(chuked32BitDataIt);
 
     for (std::uint32_t i = 0; i < NR_RUNDS; ++i) {
-      *Xl = *Xl ^ subKeys[i];
+      *Xl = *Xl ^ pKeys[i];
       *Xr = F(*Xl) ^ *Xr;
       std::swap(*Xl, *Xr);
     }
     std::swap(*Xl, *Xr);
-    *Xr = *Xr ^ subKeys[16];
-    *Xl = *Xl ^ subKeys[17];
+    *Xr = *Xr ^ pKeys[16];
+    *Xl = *Xl ^ pKeys[17];
   }
 
   std::wstring result;
@@ -183,11 +222,11 @@ std::wstring encryptWcharSize4(std::wstring text) {
   return result;
 }
 
-std::wstring encrypt(std::wstring text) {
-  return sizeof(wchar_t) == 4 ? encryptWcharSize4(text) : L"";
+std::wstring encrypt(const std::wstring &text, const std::wstring &manualKey) {
+  return sizeof(wchar_t) == 4 ? encryptWcharSize4(text, manualKey) : L"";
 }
 
-std::wstring dencrypt(std::wstring text) {
+std::wstring dencrypt(std::wstring text, const std::wstring &manualKey) {
   if (text.empty()) {
     return L"";
   }
@@ -196,10 +235,13 @@ std::wstring dencrypt(std::wstring text) {
     text.push_back(' ');
   }
 
-  const static std::vector<uint32_t> subKeys{
-      0x56FA18EA, 0x5383662D, 0xAC4B8B42, 0x445AE44E, 0x05962030, 0x4BECE1BD,
-      0x9EE084B2, 0x524620B1, 0x062141E0, 0x86E73ECA, 0xAED6C8B5, 0xC26FE723,
-      0xCD58D244, 0x2CC34519, 0x60A48FEA, 0x4B9A1F4A, 0xE8AFD413, 0x6B9B8DB3};
+  auto initializeDecryptPKeys = [&](const std::wstring &key) {
+    pKeysReverse.reserve(pKeys.size());
+    std::copy(pKeys.begin(), pKeys.end(), std::back_inserter(pKeysReverse));
+    std::reverse(pKeysReverse.begin(), pKeysReverse.end());
+  };
+
+  initializeDecryptPKeys(manualKey);
 
   auto chuked32BitData = splitIn32BitChunks(text);
 
@@ -209,13 +251,13 @@ std::wstring dencrypt(std::wstring text) {
     const auto Xr = std::next(chuked32BitDataIt);
 
     for (std::uint32_t i = 0; i < NR_RUNDS; ++i) {
-      *Xl = *Xl ^ subKeys[i];
+      *Xl = *Xl ^ pKeysReverse[i];
       *Xr = F(*Xl) ^ *Xr;
       std::swap(*Xl, *Xr);
     }
     std::swap(*Xl, *Xr);
-    *Xr = *Xr ^ subKeys[16];
-    *Xl = *Xl ^ subKeys[17];
+    *Xr = *Xr ^ pKeysReverse[16];
+    *Xl = *Xl ^ pKeysReverse[17];
   }
 
   std::wstring result;
