@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/sergiu/Desktop/CSD/Proiect/Client/builddir
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Client.dir/all
+all: CMakeFiles/ClientComm.dir/all
 all: utilities/all
 all: yamlReader/all
 
@@ -66,7 +66,7 @@ preinstall: yamlReader/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Client.dir/clean
+clean: CMakeFiles/ClientComm.dir/clean
 clean: utilities/clean
 clean: yamlReader/clean
 
@@ -109,32 +109,32 @@ yamlReader/clean: yamlReader/CMakeFiles/yamlReader.dir/clean
 .PHONY : yamlReader/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Client.dir
+# Target rules for target CMakeFiles/ClientComm.dir
 
 # All Build rule for target.
-CMakeFiles/Client.dir/all: utilities/CMakeFiles/utilities.dir/all
-CMakeFiles/Client.dir/all: yamlReader/CMakeFiles/yamlReader.dir/all
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/depend
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles --progress-num=1,2 "Built target Client"
-.PHONY : CMakeFiles/Client.dir/all
+CMakeFiles/ClientComm.dir/all: utilities/CMakeFiles/utilities.dir/all
+CMakeFiles/ClientComm.dir/all: yamlReader/CMakeFiles/yamlReader.dir/all
+	$(MAKE) -f CMakeFiles/ClientComm.dir/build.make CMakeFiles/ClientComm.dir/depend
+	$(MAKE) -f CMakeFiles/ClientComm.dir/build.make CMakeFiles/ClientComm.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles --progress-num=1,2 "Built target ClientComm"
+.PHONY : CMakeFiles/ClientComm.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Client.dir/rule: cmake_check_build_system
+CMakeFiles/ClientComm.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles 6
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Client.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ClientComm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles 0
-.PHONY : CMakeFiles/Client.dir/rule
+.PHONY : CMakeFiles/ClientComm.dir/rule
 
 # Convenience name for target.
-Client: CMakeFiles/Client.dir/rule
+ClientComm: CMakeFiles/ClientComm.dir/rule
 
-.PHONY : Client
+.PHONY : ClientComm
 
 # clean rule for target.
-CMakeFiles/Client.dir/clean:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/clean
-.PHONY : CMakeFiles/Client.dir/clean
+CMakeFiles/ClientComm.dir/clean:
+	$(MAKE) -f CMakeFiles/ClientComm.dir/build.make CMakeFiles/ClientComm.dir/clean
+.PHONY : CMakeFiles/ClientComm.dir/clean
 
 #=============================================================================
 # Target rules for target utilities/CMakeFiles/utilities.dir

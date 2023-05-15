@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.o"
+  "CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.o"
   "SHARE_ENCRYPTED"
   "SHARE_ENCRYPTED.pdb"
 )

@@ -9,7 +9,13 @@
 /home/sergiu/Desktop/CSD/Proiect/Client/utilities/Utilities.cpp
 Utilities.h
 /home/sergiu/Desktop/CSD/Proiect/Client/utilities/Utilities.h
+codecvt
+-
 fstream
+-
+locale
+-
+sstream
 -
 
 /home/sergiu/Desktop/CSD/Proiect/Client/utilities/Utilities.h

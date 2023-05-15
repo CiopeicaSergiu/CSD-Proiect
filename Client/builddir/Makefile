@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Client
+# Target rules for targets named ClientComm
 
 # Build rule for target.
-Client: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Client
-.PHONY : Client
+ClientComm: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ClientComm
+.PHONY : ClientComm
 
 # fast build rule for target.
-Client/fast:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/build
-.PHONY : Client/fast
+ClientComm/fast:
+	$(MAKE) -f CMakeFiles/ClientComm.dir/build.make CMakeFiles/ClientComm.dir/build
+.PHONY : ClientComm/fast
 
 #=============================================================================
 # Target rules for targets named utilities
@@ -155,7 +155,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/ClientComm.dir/build.make CMakeFiles/ClientComm.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -164,7 +164,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/ClientComm.dir/build.make CMakeFiles/ClientComm.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -173,7 +173,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/ClientComm.dir/build.make CMakeFiles/ClientComm.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -184,7 +184,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Client"
+	@echo "... ClientComm"
 	@echo "... utilities"
 	@echo "... yamlReader"
 	@echo "... main.o"

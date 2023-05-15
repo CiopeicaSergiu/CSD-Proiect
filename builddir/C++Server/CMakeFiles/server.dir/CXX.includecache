@@ -10,6 +10,10 @@
 string
 -
 
+../EncryptionDecryption/BlowFish.h
+string
+-
+
 ../dependencies/restbed/distribution/include/corvusoft/restbed/byte.hpp
 vector
 -
@@ -295,6 +299,8 @@ string
 /home/sergiu/Desktop/CSD/Proiect/C++Server/Service.cpp
 Service.h
 /home/sergiu/Desktop/CSD/Proiect/C++Server/Service.h
+BlowFish.h
+/home/sergiu/Desktop/CSD/Proiect/C++Server/BlowFish.h
 Utilities.h
 /home/sergiu/Desktop/CSD/Proiect/C++Server/Utilities.h
 iostream

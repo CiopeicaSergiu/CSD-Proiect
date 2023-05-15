@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 20)
 #set(CMAKE_BUILD_TYPE Debug)
 #set(CMAKE_BUILD_TYPE RelWithDebInfo)
 
-set(SOURCE_FILES test.cpp)
+set(SOURCE_FILES main.cpp)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
 add_subdirectory(C++Server)

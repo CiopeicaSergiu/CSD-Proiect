@@ -1,4 +1,5 @@
 #include "Service.h"
+#include "BlowFish.h"
 #include "Utilities.h"
 #include <iostream>
 #include <string>
@@ -7,9 +8,13 @@
 
 static const std::string dataFolder{"./data/test.txt"};
 
+static const std::wstring KEY = L"Ana are mere.";
+
 void Service::getDataEvent(const std::shared_ptr<restbed::Session> session) {
-  const std::string text = utils::readFromFile(dataFolder);
-  sendResponseAndCloseSession(session, text);
+  std::wstring text = utils::readFile("./data/test.txt");
+  const auto encryptedText = blowfish::encrypt(text, KEY);
+  std::string stringText = utils::to_string(encryptedText);
+  sendResponseAndCloseSession(session, stringText);
 }
 
 void Service::setEndPointForGetData(

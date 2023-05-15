@@ -226,7 +226,9 @@ std::wstring encrypt(const std::wstring &text, const std::wstring &manualKey) {
   return sizeof(wchar_t) == 4 ? encryptWcharSize4(text, manualKey) : L"";
 }
 
-std::wstring dencrypt(std::wstring text, const std::wstring &manualKey) {
+std::wstring dencrypt(std::wstring &text, const std::wstring &manualKey) {
+  std::cout << "Decryption started......11\n";
+
   if (text.empty()) {
     return L"";
   }
@@ -234,7 +236,8 @@ std::wstring dencrypt(std::wstring text, const std::wstring &manualKey) {
   if (text.size() % 2 == 1) {
     text.push_back(' ');
   }
-
+  std::cout << "Decryption started......22\n";
+  std::cout << "Decryption started......44\n";
   auto initializeDecryptPKeys = [&](const std::wstring &key) {
     pKeysReverse.reserve(pKeys.size());
     std::copy(pKeys.begin(), pKeys.end(), std::back_inserter(pKeysReverse));
@@ -244,9 +247,11 @@ std::wstring dencrypt(std::wstring text, const std::wstring &manualKey) {
   initializeDecryptPKeys(manualKey);
 
   auto chuked32BitData = splitIn32BitChunks(text);
-
+  std::cout << "Decryption started......4\n";
   for (auto chuked32BitDataIt = chuked32BitData.begin();
        chuked32BitDataIt != chuked32BitData.end(); chuked32BitDataIt += 2) {
+    std::cout << "Decryption started......3\n";
+
     const auto Xl = chuked32BitDataIt;
     const auto Xr = std::next(chuked32BitDataIt);
 

@@ -57,27 +57,27 @@ include CMakeFiles/SHARE_ENCRYPTED.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SHARE_ENCRYPTED.dir/flags.make
 
-CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.o: CMakeFiles/SHARE_ENCRYPTED.dir/flags.make
-CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.o: ../test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.o -c /home/sergiu/Desktop/CSD/Proiect/test.cpp
+CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.o: CMakeFiles/SHARE_ENCRYPTED.dir/flags.make
+CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.o -c /home/sergiu/Desktop/CSD/Proiect/main.cpp
 
-CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sergiu/Desktop/CSD/Proiect/test.cpp > CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.i
+CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sergiu/Desktop/CSD/Proiect/main.cpp > CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.i
 
-CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sergiu/Desktop/CSD/Proiect/test.cpp -o CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.s
+CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sergiu/Desktop/CSD/Proiect/main.cpp -o CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.s
 
 # Object files for target SHARE_ENCRYPTED
 SHARE_ENCRYPTED_OBJECTS = \
-"CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.o"
+"CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.o"
 
 # External object files for target SHARE_ENCRYPTED
 SHARE_ENCRYPTED_EXTERNAL_OBJECTS =
 
-SHARE_ENCRYPTED: CMakeFiles/SHARE_ENCRYPTED.dir/test.cpp.o
+SHARE_ENCRYPTED: CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.o
 SHARE_ENCRYPTED: CMakeFiles/SHARE_ENCRYPTED.dir/build.make
 SHARE_ENCRYPTED: C++Server/libserver.a
 SHARE_ENCRYPTED: EncryptionDecryption/libEncryptionDecryption.a
