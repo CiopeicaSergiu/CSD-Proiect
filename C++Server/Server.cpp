@@ -1,18 +1,23 @@
 #include "Server.h"
+#include <boost/json/serialize.hpp>
+#include <boost/json/value.hpp>
+#include <boost/json/value_from.hpp>
 
 void Server::sendResponseAndCloseSession(
     const std::shared_ptr<restbed::Session> &session,
-    const std::string message) {
+    const boost::json::value &dataValue) {
 
-  session->close(restbed::OK, message,
-                 {{"Content-Length", std::to_string(message.size()).c_str()}});
+  session->close(restbed::OK, boost::json::serialize(dataValue),
+                 {{"Content-Type", "application/json"}});
 }
 
 void Server::sendUnfoundAndCloseSession(
     const std::shared_ptr<restbed::Session> &session,
-    const std::string message) {
+    const std::wstring message) {
+
   session->close(restbed::UNAUTHORIZED,
-                 {{"Content-Length", std::to_string(message.size()).c_str()}});
+                 boost::json::serialize(boost::json::value_from(message)),
+                 {{"Content-Type", "application/json"}});
 }
 
 void Server::setSettings() {

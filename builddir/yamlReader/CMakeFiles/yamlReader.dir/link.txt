@@ -1,2 +1,0 @@
-/usr/bin/ar qc libyamlReader.a  CMakeFiles/yamlReader.dir/Settings.cpp.o
-/usr/bin/ranlib libyamlReader.a

@@ -2,16 +2,21 @@
 #include <restbed>
 #include <string>
 
+namespace boost::json {
+class value;
+}
+
 class Server {
 protected:
   std::shared_ptr<restbed::Resource> resource;
 
   void
   sendResponseAndCloseSession(const std::shared_ptr<restbed::Session> &session,
-                              const std::string message);
+                              const boost::json::value &dataValue);
+
   void
   sendUnfoundAndCloseSession(const std::shared_ptr<restbed::Session> &session,
-                             const std::string message);
+                             const std::wstring message);
 
   explicit Server(const size_t port);
 

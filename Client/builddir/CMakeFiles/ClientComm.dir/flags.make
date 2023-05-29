@@ -6,5 +6,5 @@ CXX_FLAGS = -O2 -g -DNDEBUG   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sergiu/Desktop/CSD/Proiect/Client/utilities -I/home/sergiu/Desktop/CSD/Proiect/Client/yamlReader -I/home/sergiu/Desktop/CSD/Proiect/Client/./../EncryptionDecryption -I/home/sergiu/Desktop/CSD/Proiect/Client/yamlReader/../dependencies/yaml/include 
+CXX_INCLUDES = -I/home/sergiu/Desktop/CSD/Proiect/Client/utilities -I/home/sergiu/Desktop/CSD/Proiect/Client/yamlReader -I/home/sergiu/Desktop/CSD/Proiect/Client/./../EncryptionDecryption -I/home/sergiu/Desktop/CSD/Proiect/Client/./../dependencies/boost -I/home/sergiu/Desktop/CSD/Proiect/Client/utilities/./../../dependencies/boost -I/home/sergiu/Desktop/CSD/Proiect/Client/yamlReader/../dependencies/yaml/include 
 

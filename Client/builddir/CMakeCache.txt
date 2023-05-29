@@ -215,12 +215,6 @@ ClientComm_BINARY_DIR:STATIC=/home/sergiu/Desktop/CSD/Proiect/Client/builddir
 //Value Computed by CMake
 ClientComm_SOURCE_DIR:STATIC=/home/sergiu/Desktop/CSD/Proiect/Client
 
-//Value Computed by CMake
-Client_BINARY_DIR:STATIC=/home/sergiu/Desktop/CSD/Proiect/Client/builddir
-
-//Value Computed by CMake
-Client_SOURCE_DIR:STATIC=/home/sergiu/Desktop/CSD/Proiect/Client
-
 
 ########################
 # INTERNAL cache entries

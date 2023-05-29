@@ -1,2 +1,2 @@
 #!/bin/bash 
-./Client/builddir/Client
+./Client/builddir/ClientComm

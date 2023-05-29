@@ -6,5 +6,5 @@ CXX_FLAGS = -O2 -g -DNDEBUG   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/sergiu/Desktop/CSD/Proiect/Client/utilities/./../../dependencies/boost 
 

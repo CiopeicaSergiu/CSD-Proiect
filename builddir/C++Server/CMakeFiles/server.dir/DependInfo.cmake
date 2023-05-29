@@ -14,6 +14,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../dependencies/restbed/distribution/include"
   "../Client/utilities"
   "../EncryptionDecryption"
+  "../dependencies/boost"
   )
 
 # Targets to which this target links.

@@ -81,6 +81,7 @@ SHARE_ENCRYPTED: CMakeFiles/SHARE_ENCRYPTED.dir/main.cpp.o
 SHARE_ENCRYPTED: CMakeFiles/SHARE_ENCRYPTED.dir/build.make
 SHARE_ENCRYPTED: C++Server/libserver.a
 SHARE_ENCRYPTED: EncryptionDecryption/libEncryptionDecryption.a
+SHARE_ENCRYPTED: ../dependencies/boost/stage/lib/libboost_json.a
 SHARE_ENCRYPTED: CMakeFiles/SHARE_ENCRYPTED.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sergiu/Desktop/CSD/Proiect/builddir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SHARE_ENCRYPTED"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SHARE_ENCRYPTED.dir/link.txt --verbose=$(VERBOSE)

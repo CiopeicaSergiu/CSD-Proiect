@@ -13,6 +13,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../utilities"
   "../yamlReader"
   ".././../EncryptionDecryption"
+  ".././../dependencies/boost"
+  "../utilities/./../../dependencies/boost"
   "../yamlReader/../dependencies/yaml/include"
   )
 

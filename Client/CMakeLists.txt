@@ -11,11 +11,13 @@ add_subdirectory(yamlReader)
 
 target_link_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/builddir/utilities
                                                 ${PROJECT_SOURCE_DIR}/builddir/yamlReader
-                                                ./../builddir/EncryptionDecryption)
+                                                ./../builddir/EncryptionDecryption
+                                                ./../dependencies/boost/stage/lib)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/utilities
                                                   ${PROJECT_SOURCE_DIR}/yamlReader
-                                                  ./../EncryptionDecryption)
+                                                  ./../EncryptionDecryption
+                                                  ./../dependencies/boost)
 
-target_link_libraries(${PROJECT_NAME} curl curlpp utilities yamlReader EncryptionDecryption) 
+target_link_libraries(${PROJECT_NAME} curl curlpp utilities yamlReader EncryptionDecryption libboost_json.a)  
 

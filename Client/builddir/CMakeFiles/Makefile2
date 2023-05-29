@@ -112,8 +112,8 @@ yamlReader/clean: yamlReader/CMakeFiles/yamlReader.dir/clean
 # Target rules for target CMakeFiles/ClientComm.dir
 
 # All Build rule for target.
-CMakeFiles/ClientComm.dir/all: utilities/CMakeFiles/utilities.dir/all
 CMakeFiles/ClientComm.dir/all: yamlReader/CMakeFiles/yamlReader.dir/all
+CMakeFiles/ClientComm.dir/all: utilities/CMakeFiles/utilities.dir/all
 	$(MAKE) -f CMakeFiles/ClientComm.dir/build.make CMakeFiles/ClientComm.dir/depend
 	$(MAKE) -f CMakeFiles/ClientComm.dir/build.make CMakeFiles/ClientComm.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sergiu/Desktop/CSD/Proiect/Client/builddir/CMakeFiles --progress-num=1,2 "Built target ClientComm"

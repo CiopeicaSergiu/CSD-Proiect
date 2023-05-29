@@ -14,6 +14,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../C++Server"
   "../EncryptionDecryption"
   "../Client/utilities"
+  "../dependencies/boost"
   "../dependencies/boost/boost"
   )
 

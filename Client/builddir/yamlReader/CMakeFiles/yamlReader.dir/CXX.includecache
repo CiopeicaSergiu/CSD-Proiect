@@ -6,3 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/home/sergiu/Desktop/CSD/Proiect/Client/yamlReader/Settings.cpp
+Settings.h
+/home/sergiu/Desktop/CSD/Proiect/Client/yamlReader/Settings.h
+iostream
+-
+yaml-cpp/yaml.h
+-
+
+/home/sergiu/Desktop/CSD/Proiect/Client/yamlReader/Settings.h
+string
+-
+vector
+-
+

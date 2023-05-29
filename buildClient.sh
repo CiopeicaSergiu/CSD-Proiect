@@ -1,3 +1,7 @@
 #!/bin/bash 
-cd ./Client/builddir
+cd ./Client
+rm -rf builddir
+mkdir builddir
+cd builddir
+cmake -S .. -B .
 make
